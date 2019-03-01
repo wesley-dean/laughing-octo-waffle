@@ -3,6 +3,8 @@
 ## What is this?
 This is a daily build of the Nextcloud Apache-based image with all of the options (-full) enabled.
 
+* https://hub.docker.com/_/nextcloud
+
 ## What does this provide?
 * cron (via supervisord)
 * dependencies for IMAP authentication
@@ -12,12 +14,15 @@ This is a daily build of the Nextcloud Apache-based image with all of the option
 Use this image the same way you would the official Nextcloud image; just replace 'nextcloud:latest' with 'wesleydean/nextcloudapachefull:latest'.
 
 Setup the volume -- do this once, the first time:
+
 ```docker volume create nextclouddata```
 
 Pull the image:
+
 ```docker pull wesleydean/nextcloudapachefull:latest```
 
 Use this to start the container:
+
 ```docker run --detach --volume nextclouddata:/var/www/html --publish 8080:80 --name nextcloud  wesleydean/nextcloudapachefull:latest```
 
 ## Where did the source come from?
