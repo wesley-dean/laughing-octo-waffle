@@ -31,9 +31,11 @@ The Dockerfile used to build this image was provided by the Nextcloud project th
 * https://github.com/nextcloud/docker/tree/master/.examples
 
 ## How do I get automated updates?
-Add a container running 'v2tech/watchtower'; this will check for updated images, pull the updates, and safely restart the affected containers automatically.
+Add a container running 'v2tec/watchtower'; this will check for updated images, pull the updates, and safely restart the affected containers automatically.
 
 * https://hub.docker.com/r/v2tec/watchtower
 
+```docker run --detach --volume /var/run/docker.sock:/var/run/docker.sock v2tec/watchtower:latest```
+
 ## Who gets credit for this?
-The kind folks who maintain Nextcloud, Docker Hub, GitHub, V2tech, and Jenkins.  All I did was setup a scheduled build to take everyone else's work and push the refreshed image.
+The kind folks who maintain Nextcloud, Docker Hub, GitHub, V2tec, and Jenkins.  All I did was setup a scheduled build to take everyone else's work and push the refreshed image.
