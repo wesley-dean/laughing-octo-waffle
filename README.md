@@ -23,7 +23,14 @@ Pull the image:
 
 Use this to start the container:
 
-```docker run --detach --volume nextclouddata:/var/www/html --publish 8080:80 --name nextcloud  wesleydean/nextcloudapachefull:latest```
+```
+docker run \
+  --detach \
+  --volume nextclouddata:/var/www/html \
+  --publish 8080:80 \
+  --name nextcloud  \
+  wesleydean/nextcloudapachefull:latest
+```
 
 ## Where did the source come from?
 The Dockerfile used to build this image was provided by the Nextcloud project through their repository on GitHub:
@@ -35,7 +42,13 @@ Add a container running 'v2tec/watchtower'; this will check for updated images, 
 
 * https://hub.docker.com/r/v2tec/watchtower
 
-```docker run --detach --volume /var/run/docker.sock:/var/run/docker.sock --name watchtower v2tec/watchtower:latest```
+```
+docker run \
+  --detach \
+  --volume /var/run/docker.sock:/var/run/docker.sock \
+  --name watchtower \
+  v2tec/watchtower:latest
+```
 
 ## Who gets credit for this?
 The kind folks who maintain Nextcloud, Docker Hub, GitHub, V2tec, and Jenkins.  All I did was setup a scheduled build to take everyone else's work and push the refreshed image.
