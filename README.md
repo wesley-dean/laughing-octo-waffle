@@ -35,7 +35,7 @@ Add a container running 'v2tec/watchtower'; this will check for updated images, 
 
 * https://hub.docker.com/r/v2tec/watchtower
 
-```docker run --detach --volume /var/run/docker.sock:/var/run/docker.sock v2tec/watchtower:latest```
+```docker run --detach --volume /var/run/docker.sock:/var/run/docker.sock --name watchtower v2tec/watchtower:latest```
 
 ## Who gets credit for this?
 The kind folks who maintain Nextcloud, Docker Hub, GitHub, V2tec, and Jenkins.  All I did was setup a scheduled build to take everyone else's work and push the refreshed image.
