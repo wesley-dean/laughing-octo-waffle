@@ -28,6 +28,7 @@ pipeline {
 
     environment {
         image_name = "$params.image_name"
+        repository_url = "$params.repository_url"
         git_credential = "$params.git_credential"
         docker_credential = "$params.docker_credential"
     }
