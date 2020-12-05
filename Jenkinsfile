@@ -3,7 +3,7 @@ pipeline {
     parameters {
         string (
             name: 'repository_url',
-            defaultValue: 'https://github.com/wesley-dean/laughing_octo.git',
+            defaultValue: 'https://github.com/wesley-dean/laughing-octo-waffle.git',
             description: 'the URL to the Git repository'
         )
 
