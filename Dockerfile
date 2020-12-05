@@ -3,7 +3,7 @@ FROM nextcloud:apache
 RUN set -ex; \
     \
     apt-get update; \
-    apt-get install -y --no-install-recommends \
+    apt-get install -fy --no-install-recommends \
         ffmpeg \
         libmagickcore-6.q16-3-extra \
         smbclient \
@@ -17,7 +17,7 @@ RUN set -ex; \
     savedAptMark="$(apt-mark showmanual)"; \
     \
     apt-get update; \
-    apt-get install -y --no-install-recommends \
+    apt-get install -fy --no-install-recommends \
         libbz2-dev \
         libc-client-dev \
         libgmp3-dev \
@@ -26,7 +26,7 @@ RUN set -ex; \
     ; \
     \
     docker-php-ext-configure imap --with-kerberos --with-imap-ssl; \
-    ln -s "/usr/include/$(dpkg-architecture --query DEB_BUILD_MULTIARCH)/gmp.h" /usr/include/gmp.h; \
+    ln -sf "/usr/include/$(dpkg-architecture --query DEB_BUILD_MULTIARCH)/gmp.h" /usr/include/gmp.h; \
     docker-php-ext-install \
         bz2 \
         gmp \
